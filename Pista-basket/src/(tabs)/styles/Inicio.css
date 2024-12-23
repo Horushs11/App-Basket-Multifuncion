@@ -1,0 +1,62 @@
+.background-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Evita desbordamientos */
+    background-color: black; /* Color de fondo para áreas vacías si es necesario */
+  }
+  
+  .background-image {
+    position: absolute; /* Posiciona la imagen absolutamente dentro del contenedor */
+    top: 0;
+    left: 0;
+    width: 100%; /* Escala la imagen para llenar el ancho */
+    height: 100%; /* Escala la imagen para llenar el alto */
+    object-fit: cover; /* Asegura que la imagen llena completamente el contenedor */
+  }
+
+  .ficha {
+    position: absolute;
+    width: 50px; /* Tamaño predeterminado */
+    height: 50px;
+    border-radius: 50%; /* Hace la ficha redonda */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: white;
+    cursor: grab; /* Cambia el cursor al arrastrar */
+    user-select: none; /* Evita selección de texto */
+  }
+  
+  .ficha:active {
+    cursor: grabbing; /* Cambia el cursor mientras se arrastra */
+  }
+  
+  /* Ficha especial: el balón */
+  .balon {
+    width: 30px; /* Más pequeña */
+    height: 30px;
+    background-color: orange;
+    font-size: 14px;
+  }
+  
+  /* Fichas azules */
+  .azul {
+    background-color: blue;
+  }
+  
+  /* Fichas verdes */
+  .verde {
+    background-color: green;
+  }
+  
+  /* Ajuste para ventanas altas */
+  @media (max-aspect-ratio: 16/9) {
+    .background-image {
+      width: 100%; /* Ajusta al ancho completo */
+      height: auto; /* Mantiene la proporción sin recortes */
+    }
+  }
